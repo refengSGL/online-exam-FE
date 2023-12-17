@@ -151,13 +151,6 @@
         <el-table-column prop="operate" label="操作" width="300">
           <template slot-scope="scope" v-if="tab_classes == 'user_list'">
             <el-button
-              type="primary"
-              size="small"
-              @click="openPaper(scope.row.classesId, scope.row.classes.name)"
-              plain
-              >查看该学生的考试记录</el-button
-            >
-            <el-button
               type="danger"
               size="small"
               @click="outUser(scope.row.userId)"
@@ -369,7 +362,7 @@ export default {
       this.$refs.releaseUpdate.changeTestDate(val, this.classesData.classesId);
     },
 
-    // 查看考试情况
+    //     查看考试情况
     testSituation(tp_id) {
       this.$router.push({
         path: "/main/classes/testSituation",

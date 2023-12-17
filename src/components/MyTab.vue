@@ -59,7 +59,7 @@ import "../assets/less/my_tab.less";
 export default {
   inject: ["reload"],
   name: "MyTab",
-  props: ["menu", "openFinishTestId", "paperName", "listName"],
+  props: ["menu", "openFinis hTestId", "paperName", "listName"],
   data() {
     return {
       activeId: "-1",
@@ -79,21 +79,6 @@ export default {
           introduction: "",
         },
       },
-      menu: [
-        {
-          title: "我审批过的试卷",
-          path: "/main/myCheckTest/checkTestList",
-          name: "CheckTestList",
-          id: "-1",
-        },
-        {
-          title: "试卷1",
-          path: "/main/myCheckTest/checkTestList",
-          name: "CheckTest",
-          id: "0001",
-          closable: false,
-        },
-      ],
     };
   },
 

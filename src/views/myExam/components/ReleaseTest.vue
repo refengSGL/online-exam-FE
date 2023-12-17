@@ -1,7 +1,13 @@
 <template>
   <div>
     <!-- 发布考试弹框 -->
-    <el-dialog class="releaseTest" :title="examName" :visible.sync="dialog" width="70%" @close="closeReleaseTestDialog">
+    <el-dialog
+      class="releaseTest"
+      :title="examName"
+      :visible.sync="dialog"
+      width="70%"
+      @close="closeReleaseTestDialog"
+    >
       <el-steps :active="releaseTestSteps" finish-status="success" align-center>
         <el-step title="选择班级"></el-step>
         <el-step title="选择考试时间"></el-step>
@@ -9,37 +15,68 @@
       </el-steps>
 
       <!-- 选择班级 -->
-      <div v-if="releaseTestSteps==0">
-        <el-table ref="multipleTable" :data="classesList" height="350" tooltip-effect="dark" style="width: 100%" @selection-change="handleSelectionChange">
+      <div v-if="releaseTestSteps == 0">
+        <el-table
+          ref="multipleTable"
+          :data="classesList"
+          height="350"
+          tooltip-effect="dark"
+          style="width: 100%"
+          @selection-change="handleSelectionChange"
+        >
           <el-table-column type="selection" width="55" />
           <el-table-column label="班级编号" width="120">
-            <template slot-scope="scope">C{{scope.row.classesId}} </template>
+            <template slot-scope="scope">C{{ scope.row.classesId }} </template>
           </el-table-column>
           <el-table-column prop="classesName" label="班级名称" />
           <el-table-column prop="date" label="考试时间" width="350" />
           <el-table-column prop="status" label="状态" width="150" />
         </el-table>
-        <el-pagination class="pagination" layout="total, prev, pager, next,jumper" :total="total" :page-size="pageSize" @current-change="currentChange">
+        <el-pagination
+          class="pagination"
+          layout="total, prev, pager, next,jumper"
+          :total="total"
+          :page-size="pageSize"
+          @current-change="currentChange"
+        >
         </el-pagination>
       </div>
 
       <!-- 选择考试时间 -->
-      <div v-if="releaseTestSteps==1">
-        <el-date-picker v-model="releaseTestDate" type="datetimerange" range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期">
+      <div v-if="releaseTestSteps == 1">
+        <el-date-picker
+          v-model="releaseTestDate"
+          type="datetimerange"
+          range-separator="至"
+          start-placeholder="开始日期"
+          end-placeholder="结束日期"
+        >
         </el-date-picker>
-        <el-switch v-model="publishAnswer" active-text="公布答案" :active-value="1" inactive-text="不公布答案" :inactive-value="0" />
-        <el-switch v-model="publishScore" active-text="公布分数" :active-value="1" inactive-text="不公布分数" :inactive-value="0" />
+        <el-switch
+          v-model="publishAnswer"
+          active-text="公布答案"
+          :active-value="1"
+          inactive-text="不公布答案"
+          :inactive-value="0"
+        />
+        <el-switch
+          v-model="publishScore"
+          active-text="公布分数"
+          :active-value="1"
+          inactive-text="不公布分数"
+          :inactive-value="0"
+        />
       </div>
 
       <span slot="footer" class="dialog-footer">
         <el-button size="medium" @click="lastStep()">
-          {{releaseTestSteps==1?'上一步':'取消'}}
+          {{ releaseTestSteps == 1 ? "上一步" : "取消" }}
         </el-button>
-        <el-button type="info" v-if="releaseTestSteps==0" size="medium">
+        <el-button type="info" v-if="releaseTestSteps == 0" size="medium">
           取消发布
         </el-button>
         <el-button type="primary" @click="nestStep()" size="medium">
-          {{releaseTestSteps==0?'下一步':'发布考试'}}
+          {{ releaseTestSteps == 0 ? "下一步" : "发布考试" }}
         </el-button>
       </span>
     </el-dialog>
@@ -52,10 +89,10 @@ import { getFormatDate } from "@/utils/common.js";
 export default {
   name: "ReleaseTest",
   props: {
-    // examName: {
-    //   type: String,
-    //   default: ''
-    // }
+    examname: {
+      type: String,
+      default: "",
+    },
   },
   data() {
     return {
@@ -90,7 +127,7 @@ export default {
     //弹出发布考试对话框,用户选择班级与时间
     async releaseTest(tp_id, examName) {
       this.dialog = true;
-      this.currentPage = 1
+      this.currentPage = 1;
       this.examName = "发布试卷名称: " + examName;
       this.examId = tp_id;
 
@@ -231,7 +268,7 @@ export default {
         startDate,
         deadline,
         publishScore: this.publishScore,
-        publishAnswer: this.publishAnswer
+        publishAnswer: this.publishAnswer,
       };
       this.$http.post("/releaseTest", request).then((res) => {
         if (res.code == 200) {
@@ -267,27 +304,26 @@ export default {
 </script>
 
 <style lang="less" >
-.releaseTest{
-  .el-dialog .pagination{
+.releaseTest {
+  .el-dialog .pagination {
     text-align: center;
     margin-top: 6px;
   }
-  .el-dialog .el-date-editor{
+  .el-dialog .el-date-editor {
     margin: 0;
     margin-top: 24px;
   }
-  .el-dialog__body{
-      text-align: center;
+  .el-dialog__body {
+    text-align: center;
   }
-  .el-dialog__body .el-switch{
-      display: block;
-      margin: 24px 0;
+  .el-dialog__body .el-switch {
+    display: block;
+    margin: 24px 0;
   }
 
-  .el-divider--horizontal{
-      background-color: #444;
-      margin: 14px 0s;
+  .el-divider--horizontal {
+    background-color: #444;
+    margin: 14px 0s;
   }
 }
-
 </style>

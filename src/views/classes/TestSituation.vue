@@ -104,7 +104,6 @@
               "
               plain
             >
-              <!-- {{scope.row.markStatus == 1 ? '查看试卷':'审批试卷'}} -->
               审批试卷
             </el-button>
           </template>
@@ -152,8 +151,8 @@ export default {
   async mounted() {
     this.getReleaseInfo();
     this.getUserGradeList();
-    // this.drawLine();
-    // this.drawLine2();
+    this.drawLine();
+    this.drawLine2();
   },
   methods: {
     drawLine() {
@@ -221,6 +220,9 @@ export default {
             ],
           },
         ],
+      });
+      myChart.resize({
+        height: 300,
       });
     },
     getUserGradeList() {
@@ -321,7 +323,7 @@ export default {
   }
   .list-header .charts {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 0 24px;
   }
 }

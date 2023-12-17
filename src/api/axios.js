@@ -4,7 +4,7 @@ import router from '../router'
 import Vue from 'vue'
 
 const baseURL = 'http://localhost:8081'
-Vue.prototype.$imageBaseUrl = baseURL + 'D:/项目/demo/前端/Online-exam/online-examination-system-server-master/src/main/resources/static/images/';
+Vue.prototype.$imageBaseUrl = baseURL + '/images/';
 Vue.prototype.$baseURL = baseURL;
 
 const service = axios.create({

@@ -4,12 +4,13 @@
       <div class="tab-content">
         <div class="home-introduce">
           <div>
-            <p>欢迎来到考试汇</p>
-            <p>这是一款基于前后端分离的线上考试系统</p>
-            <p>前端采用vue框架，搭配vue-cli、axios、vuex、element-ui组件库。后端采用springBoot框架、jwt、swagger、持久层mybatis，mysql数据库。</p>
-            <p>在这里你可以切换两种不同的身份，从而使用两种不同的身份</p>
+            <p>欢迎来到我们的基于前后端分离的线上考试系统</p>
+            <p>
+              前端采用vue框架，搭配vue-cli、axios、vuex、element-ui组件库。
+              <br />后端采用springBoot框架、jwt、持久层mybatis，mysql数据库。
+            </p>
+            <p>在这里你可以切换两种不同的身份</p>
             <p>开始探索吧~</p>
-            <p><a href="https://gitee.com/tatata1124">gitbit网站: https://gitee.com/tatata1124</a></p>
           </div>
         </div>
 
@@ -27,12 +28,11 @@
           </template>
         </ul>
         <ul class="home-content">
-          <li class="myMessage">暂无消息通知</li>
-          <li class="more">功能开发中,敬请期待</li>
+          <li class="more">暂无消息通知</li>
+          <li class="message" @click="myMessage">我的消息</li>
         </ul>
       </div>
     </TopTab>
-
 
     <!-- 创建班级对话框 -->
     <CreateClasses ref="createClasses" @success="getClasses()" />
@@ -40,16 +40,14 @@
 </template>
 
 <script>
-// @ is an alias to /src
-// import HelloWorld from "@/components/HelloWorld.vue";
 import TopTab from "../../components/TopTab.vue";
 import "../../assets/less/main/home.less";
 import { mapMutations } from "vuex";
-import CreateClasses from '@/views/classes/components/CreateClasses.vue'
+import CreateClasses from "@/views/classes/components/CreateClasses.vue";
 
 export default {
   name: "Home",
-  components: {TopTab, CreateClasses },
+  components: { TopTab, CreateClasses },
   data() {
     return {
       enterClasses_id: "",
@@ -67,13 +65,13 @@ export default {
       });
       this.setActiveName("Me");
     },
-    
+
     // 我的班级
     myClasses() {
       this.$router.push({
         name: "ClassesList",
       });
-      this.setActiveName(["Classes","ClassesList","ClassesSpace"]);
+      this.setActiveName(["Classes", "ClassesList", "ClassesSpace"]);
     },
 
     // 我参加过的考试
@@ -88,17 +86,23 @@ export default {
     createExam() {
       const { href } = this.$router.resolve({
         name: "createExam",
-        params: { type: 'add'}
+        params: { type: "add" },
       });
       window.open(href, "_blank");
     },
 
-    // 创建班级
-    createClasses() {
-      this.$refs.createClasses.dialog = true  
+    // 我的消息
+    myMessage() {
+      this.$router.push({
+        name: "MyMessage",
+      });
+      this.setActiveName("MyMessage");
     },
 
-    
+    // 创建班级
+    createClasses() {
+      this.$refs.createClasses.dialog = true;
+    },
   },
 };
 </script>

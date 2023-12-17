@@ -1,21 +1,24 @@
-.home{
+.home {
     height: 100%;
     color: #333;
-    p{
+
+    p {
         margin: 0;
         padding: 0;
-      }
+    }
 
-    .tab-item{
+    .tab-item {
         padding: 18px 24px 24px 24px;
     }
-    .tab-content{
+
+    .tab-content {
         padding: 0 24px;
         // height: 100%;
         box-sizing: border-box;
         // background: #fff;
     }
-    .home-introduce{
+
+    .home-introduce {
         width: 100%;
         height: 250px;
         background: #fff;
@@ -25,28 +28,34 @@
         justify-content: center;
         align-items: center;
     }
-    .home-introduce p{
+
+    .home-introduce p {
         margin: 12px 0;
         font-size: 18px;
     }
-    .home-introduce p:nth-child(1){
+
+    .home-introduce p:nth-child(1) {
         font-size: 24px;
         margin: 0;
         padding-bottom: 8px;
     }
+
     .home-introduce p:last-child,
-    .home-introduce p:last-child a{
+    .home-introduce p:last-child a {
         font-size: 16px;
         color: #999;
         margin: 0;
         padding-bottom: 8px;
     }
-    .home-header,.home-content{
+
+    .home-header,
+    .home-content {
         display: flex;
         justify-content: space-between;
         margin-bottom: 24px;
     }
-    .home-header li{
+
+    .home-header li {
         width: 23%;
         background: #fff;
         height: 170px;
@@ -58,19 +67,29 @@
         cursor: pointer;
         border-radius: 4px;
     }
-    // .home-header li:nth-child(1){
-    //     background: #abffba;
-    // }
-    // .home-header li:nth-child(2){
-    //     background: #abffba;
-    // }
-    // .home-header li:nth-child(3){
-    //     background: #abffba;
-    // }
-    // .home-header li:nth-child(4){
-    //     background: #abffba;
-    // }
-    .home-content li{
+
+    .home-header li:nth-child(1) {
+        background: linear-gradient(45deg, #ff0000, #fff000);
+        /* 渐变从红色到黄色 */
+    }
+
+    .home-header li:nth-child(2) {
+        background: linear-gradient(45deg, #00ff33, #3f00ff);
+        /* 渐变从绿色到紫色 */
+    }
+
+    .home-header li:nth-child(3) {
+        background: linear-gradient(45deg, #0000ff, #00ffff);
+        /* 渐变从蓝色到青色 */
+    }
+
+    .home-header li:nth-child(4) {
+        background: linear-gradient(45deg, #ff00ff, #ff0000);
+        /* 渐变从紫色到红色 */
+    }
+
+
+    .home-content li {
         background: #fff;
         height: 240px;
         display: flex;
@@ -79,10 +98,18 @@
         font-size: 18px;
         color: #333;
     }
-    .home-content li.myMessage{
-        width: 64%;
+
+    .home-content li.message {
+        cursor: pointer;
+        background: linear-gradient(45deg, #ff5106, #b7ff00);
+        /* 从黄色渐变到橙色 */
+        width: 58%;
     }
-    .home-content li.more{
-        width: 33%;
+
+    .home-content li.more {
+        background: radial-gradient(circle, #fff200e3, #0099ff);
+        /* 从红色渐变到更深的红色 */
+        width: 38%;
     }
+
 }

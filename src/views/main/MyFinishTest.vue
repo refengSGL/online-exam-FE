@@ -5,29 +5,53 @@
         <div class="list-header">
           <span class="list-title">我考过的试卷</span>
           <div class="query">
-            <el-input v-model="keyword" size="small" placeholder="请输入试卷编号或者试卷名称" prefix-icon="el-icon-search"></el-input>
-            <el-button type="primary" size="small" @click="getTestPaperList(keyword)">查询</el-button>
+            <el-input
+              v-model="keyword"
+              size="small"
+              placeholder="请输入试卷编号或者试卷名称"
+              prefix-icon="el-icon-search"
+            ></el-input>
+            <el-button
+              type="primary"
+              size="small"
+              @click="getTestPaperList(keyword)"
+              >查询</el-button
+            >
           </div>
         </div>
 
         <div class="table">
-          <el-table :data="finishExamList" style="width: 100%" v-loading="loading">
+          <el-table
+            :data="finishExamList"
+            style="width: 100%"
+            v-loading="loading"
+          >
             <el-table-column label="试卷编号" width="110">
-              <template slot-scope="scope">E{{scope.row.examId}} </template>
+              <template slot-scope="scope">E{{ scope.row.examId }} </template>
             </el-table-column>
             <el-table-column prop="examName" label="试卷名称" />
             <el-table-column label="班级编号" width="110">
-              <template slot-scope="scope">C{{scope.row.classesId}} </template>
+              <template slot-scope="scope"
+                >C{{ scope.row.classesId }}
+              </template>
             </el-table-column>
             <el-table-column prop="classesName" label="班级名称" />
             <el-table-column prop="answerDate" label="答题时间" width="210" />
             <el-table-column prop="grade" label="分数" width="110" />
             <el-table-column label="试卷状态" width="110">
-              <template slot-scope="scope">{{scope.row.markStatus === 1 ? '批改完成':'待批改'}} </template>
+              <template slot-scope="scope"
+                >{{ scope.row.markStatus === 1 ? "批改完成" : "待批改" }}
+              </template>
             </el-table-column>
             <el-table-column label="操作" width="240">
               <template slot-scope="scope">
-                <el-button type="primary" size="mini" plain @click="goExam(scope.row.examId, scope.row.classesId)">查看试卷</el-button>
+                <el-button
+                  type="primary"
+                  size="mini"
+                  plain
+                  @click="goExam(scope.row.examId, scope.row.classesId)"
+                  >查看试卷</el-button
+                >
                 <!-- <el-button type="primary" size="mini" plain @click="goClasses(scope.row.classesId,scope.row.classesName)">进入班级</el-button> -->
               </template>
             </el-table-column>
@@ -35,9 +59,14 @@
         </div>
 
         <div class="page">
-          <el-pagination background layout="total, prev, pager, next,jumper" :total="total" :page-size="pageSize" @current-change="currentChange" />
+          <el-pagination
+            background
+            layout="total, prev, pager, next,jumper"
+            :total="total"
+            :page-size="pageSize"
+            @current-change="currentChange"
+          />
         </div>
-
       </div>
     </TopTab>
   </div>
@@ -80,11 +109,11 @@ export default {
       };
       setTimeout(() => {
         this.$http.get("/getFinishExam", { params }).then((res) => {
-          res.data.content.map(t =>{
-            if(!t.grade){
-              t.grade = '--'
+          res.data.content.map((t) => {
+            if (!t.grade) {
+              t.grade = "--";
             }
-          })
+          });
           this.finishExamList = res.data.content;
           this.total = res.data.total;
           this.loading = false;
@@ -93,7 +122,7 @@ export default {
     },
 
     //打开试卷
-    goExam(examId,classesId){
+    goExam(examId, classesId) {
       var { href } = this.$router.resolve({
         name: "TestPaperStu",
         params: {
@@ -105,11 +134,11 @@ export default {
     },
 
     //进入班级
-    goClasses(id,title){
+    goClasses(id, title) {
       this.$router.push({
-        name: 'ClassesSpace',
-        params: {id}
-      })
+        name: "ClassesSpace",
+        params: { id },
+      });
     },
 
     //切换分页时触发
