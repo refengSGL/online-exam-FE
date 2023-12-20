@@ -350,6 +350,30 @@ export default {
       });
     },
 
+    // 强制提交数据 并退出页面
+    aaa() {
+      var request = {
+        classesId: this.$route.params.c_id,
+        classesName: this.testData.examClasses.classesName,
+        examId: this.$route.params.tp_id,
+        examName: this.testData.examName,
+        userName: this.$store.state.userName,
+        answerTime: this.expendTime,
+        userTopicList: topic,
+      };
+
+      this.$http.post("/submitTestPaper", request).then((res) => {
+        if (res.code == 200) {
+          this.$message.success(res.msg);
+
+          // 成功提交后跳转到另一个页面或执行其他操作
+          this.$router.push("/success-page");
+        }
+      });
+
+      console.log(request);
+    },
+
     //获取试卷数据
     getTestPaperData() {
       let params = {
@@ -451,15 +475,7 @@ export default {
       //按题目类型分类并保存
       var topics = this.testData.topicTchDTOList;
       var topicsIndex = 1;
-      // for (let i = 0; i < topics.length; i++) {
-      //   for (let item of this.sortedTopics) {
-      //     if (topics[i].topicType == item.topicType) {
-      //       //添加
-      //       topics[i].index = topicsIndex++;
-      //       item.topic_content.push(topics[i]);
-      //     }
-      //   }
-      // }
+
       for (let item of this.sortedTopics) {
         for (let i = 0; i < topics.length; i++) {
           if (topics[i].topicType == item.topicType) {
@@ -481,7 +497,8 @@ export default {
         if (time < 0) {
           clearInterval(timer);
           this.$message("考试结束");
-          this.submitTestpaper();
+          // this.submitTestpaper();
+          this.aaa();
         }
       }, 1000);
     },
@@ -539,7 +556,8 @@ export default {
 
         if (this.switchPage >= this.testData.switchPage) {
           console.log("提交试卷");
-          this.submitTestpaper();
+          // this.submitTestpaper();
+          this.aaa();
         } else {
           this.$msgbox({
             title: "警告",

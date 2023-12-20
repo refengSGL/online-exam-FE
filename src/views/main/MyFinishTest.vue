@@ -36,7 +36,7 @@
               </template>
             </el-table-column>
             <el-table-column prop="classesName" label="班级名称" />
-            <el-table-column prop="answerDate" label="答题时间" width="210" />
+            <el-table-column prop="releaseTime" label="答题时间" width="210" />
             <el-table-column prop="grade" label="分数" width="110" />
             <el-table-column label="试卷状态" width="110">
               <template slot-scope="scope"
@@ -109,6 +109,7 @@ export default {
       };
       setTimeout(() => {
         this.$http.get("/getFinishExam", { params }).then((res) => {
+          console.log("Received data:", res.data);
           res.data.content.map((t) => {
             if (!t.grade) {
               t.grade = "--";

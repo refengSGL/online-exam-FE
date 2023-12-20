@@ -12,12 +12,6 @@
         </div>
         <div class="name">{{ $store.state.userName }}</div>
         <div class="dropdown">
-          <div class="item" v-if="$role('teacher')" @click="changeRole()">
-            变更为学生身份
-          </div>
-          <div class="item" v-if="$role('student')" @click="changeRole()">
-            变更为教师身份
-          </div>
           <div class="item" @click="loginOut">退出登录</div>
         </div>
       </div>
@@ -130,22 +124,6 @@ export default {
       console.log(`Updating activeName from ${this.activeName} to ${name}`);
       this.setActiveName(name);
       this.$router.push(path);
-    },
-
-    //切换身份
-    changeRole() {
-      this.$http.put("/changeRole", {}).then((res) => {
-        if (res.code == 200) {
-          this.$message.success("变更身份成功");
-          // this.$router.push("/main/home");
-          localStorage.setItem("_token", res.data.token);
-          // this.$router.go(0)
-          // this.$router.push({
-          //   name: "Home",
-          // });
-          this.reload();
-        }
-      });
     },
 
     //退出登录

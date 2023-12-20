@@ -17,19 +17,19 @@
         <ul class="home-header">
           <li @click="me">个人资料</li>
           <template v-if="$role('student')">
-            <li @click="myClasses">我的班级</li>
+            <li class="message">我的消息</li>
+            <li>我是充数的</li>
             <li @click="finishTest">我参加过的考试</li>
-            <li>功能开发中,敬请期待</li>
           </template>
           <template v-if="$role('teacher')">
             <li @click="createClasses">创建班级</li>
             <li @click="createExam">创建试卷</li>
-            <li @click="myClasses">我的班级</li>
+            <li class="message" @click="myMessage">我的消息</li>
           </template>
         </ul>
         <ul class="home-content">
           <li class="more">暂无消息通知</li>
-          <li class="message" @click="myMessage">我的消息</li>
+          <li class="message" @click="myClasses">我的班级</li>
         </ul>
       </div>
     </TopTab>

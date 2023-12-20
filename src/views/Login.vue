@@ -13,7 +13,7 @@
         <el-form-item label="账号" prop="name">
           <el-input
             v-model="form.name"
-            placeholder="请输入邮箱或手机号码"
+            placeholder="请输入学号或手机号码"
           ></el-input>
         </el-form-item>
         <el-form-item label="密码" prop="password">
@@ -41,7 +41,7 @@ export default {
   data() {
     return {
       form: {
-        name: "108732351@qq.com",
+        name: "13000000000",
         password: "admin",
       },
       rules: {

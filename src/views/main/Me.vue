@@ -4,14 +4,6 @@
       <div class="tabTitle-item active">个人中心</div>
     </div>
     <div class="tab-item">
-      <div class="uploadPhoto">
-        <div class="title">头像 :</div>
-        <img
-          class="avatar"
-          src="../../../Snipaste_2023-12-17_20-20-26.png"
-          alt="Lena"
-        />
-      </div>
       <div class="userInfo">
         <div class="item">
           <span class="title">用户Id :</span>
@@ -22,8 +14,8 @@
           <div class="con">{{ userData.userName }}</div>
         </div>
         <div class="item">
-          <span class="title">邮 箱 :</span>
-          <div class="con">{{ userData.email }}</div>
+          <span class="title">学 号 :</span>
+          <div class="con">{{ userData.number }}</div>
         </div>
         <div class="item">
           <span class="title">手机号码 :</span>
@@ -76,10 +68,4 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.uploadPhoto .avatar {
-  margin-left: 50px;
-  margin-top: 100px;
-  width: 300px;
-  height: 300px;
-}
 </style>
