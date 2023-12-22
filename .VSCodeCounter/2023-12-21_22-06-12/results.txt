@@ -1,0 +1,126 @@
+Date : 2023-12-21 22:06:12
+Directory : d:\项目\demo\前端\Online-exam\online-examination-system-FE-master
+Total : 63 files,  20197 codes, 484 comments, 805 blanks, all 21486 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |     13,626 |          0 |          2 |     13,628 |
+| Vue        |         32 |      4,784 |        370 |        471 |      5,625 |
+| Less       |         12 |      1,115 |         55 |        212 |      1,382 |
+| JavaScript |         12 |        567 |         55 |         85 |        707 |
+| Markdown   |          1 |         47 |          0 |         23 |         70 |
+| XML        |          1 |         20 |          3 |          7 |         30 |
+| CSS        |          1 |         18 |          0 |          4 |         22 |
+| HTML       |          1 |         16 |          1 |          1 |         18 |
+| TypeScript |          1 |          4 |          0 |          0 |          4 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                         | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                            |         63 |     20,197 |        484 |        805 |     21,486 |
+| . (Files)                                                                                                    |          4 |     13,678 |          0 |         27 |     13,705 |
+| public                                                                                                       |          1 |         16 |          1 |          1 |         18 |
+| src                                                                                                          |         58 |      6,503 |        483 |        777 |      7,763 |
+| src (Files)                                                                                                  |          3 |        125 |          5 |         17 |        147 |
+| src\api                                                                                                      |          1 |         50 |          5 |          7 |         62 |
+| src\assets                                                                                                   |         15 |      1,154 |         58 |        223 |      1,435 |
+| src\assets\font                                                                                              |          3 |         39 |          3 |         11 |         53 |
+| src\assets\less                                                                                              |         12 |      1,115 |         55 |        212 |      1,382 |
+| src\assets\less (Files)                                                                                      |          6 |        752 |         46 |        154 |        952 |
+| src\assets\less\main                                                                                         |          6 |        363 |          9 |         58 |        430 |
+| src\components                                                                                               |          5 |        459 |         37 |         49 |        545 |
+| src\filters                                                                                                  |          1 |         41 |          2 |          3 |         46 |
+| src\mixins                                                                                                   |          1 |         58 |          5 |         17 |         80 |
+| src\oldpaper                                                                                                 |          4 |        201 |          6 |         34 |        241 |
+| src\oldpaper (Files)                                                                                         |          2 |        116 |          5 |         22 |        143 |
+| src\oldpaper\finishTest                                                                                      |          2 |         85 |          1 |         12 |         98 |
+| src\router                                                                                                   |          2 |        142 |          0 |          9 |        151 |
+| src\store                                                                                                    |          1 |        119 |         12 |          9 |        140 |
+| src\utils                                                                                                    |          3 |        115 |         29 |         29 |        173 |
+| src\views                                                                                                    |         22 |      4,039 |        324 |        380 |      4,743 |
+| src\views (Files)                                                                                            |          4 |        384 |         30 |         37 |        451 |
+| src\views\classes                                                                                            |          7 |      1,176 |         68 |         89 |      1,333 |
+| src\views\classes (Files)                                                                                    |          4 |        945 |         51 |         76 |      1,072 |
+| src\views\classes\components                                                                                 |          3 |        231 |         17 |         13 |        261 |
+| src\views\main                                                                                               |          6 |        463 |         18 |         50 |        531 |
+| src\views\main (Files)                                                                                       |          4 |        353 |         14 |         31 |        398 |
+| src\views\main\myMessage                                                                                     |          2 |        110 |          4 |         19 |        133 |
+| src\views\myExam                                                                                             |          2 |        455 |         39 |         50 |        544 |
+| src\views\myExam (Files)                                                                                     |          1 |        184 |          9 |         22 |        215 |
+| src\views\myExam\components                                                                                  |          1 |        271 |         30 |         28 |        329 |
+| src\views\testPaper                                                                                          |          3 |      1,561 |        169 |        154 |      1,884 |
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                                                     | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\README.md                                      | Markdown   |         47 |          0 |         23 |         70 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\babel.config.js                                | JavaScript |          5 |          0 |          2 |          7 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\package-lock.json                              | JSON       |     13,597 |          0 |          1 |     13,598 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\package.json                                   | JSON       |         29 |          0 |          1 |         30 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\public\index.html                              | HTML       |         16 |          1 |          1 |         18 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\App.vue                                    | Vue        |         85 |          3 |          8 |         96 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\api\axios.js                               | JavaScript |         50 |          5 |          7 |         62 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\font\iconfont.css                   | CSS        |         18 |          0 |          4 |         22 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\font\iconfont.js                    | JavaScript |          1 |          0 |          0 |          1 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\font\iconfont.svg                   | XML        |         20 |          3 |          7 |         30 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\login.less                     | Less       |         69 |          0 |          5 |         74 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\main.less                      | Less       |        153 |         29 |         40 |        222 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\main\classes.less              | Less       |          3 |          0 |          0 |          3 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\main\classeslist.less          | Less       |        134 |          0 |         12 |        146 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\main\finishTest.less           | Less       |         52 |          1 |          9 |         62 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\main\home.less                 | Less       |         89 |          8 |         18 |        115 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\main\markTest.less             | Less       |         10 |          0 |          3 |         13 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\main\me.less                   | Less       |         75 |          0 |         16 |         91 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\markTestPaper.less             | Less       |         41 |          0 |          9 |         50 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\my_tab.less                    | Less       |        111 |         11 |         15 |        137 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\testPaper.less                 | Less       |        355 |          6 |         82 |        443 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\assets\less\topic.less                     | Less       |         23 |          0 |          3 |         26 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\components\HelloWorld.vue                  | Vue        |         34 |          1 |          4 |         39 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\components\MyTab.vue                       | Vue        |        190 |         20 |         22 |        232 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\components\MyclassesPaper.vue              | Vue        |         42 |          0 |          6 |         48 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\components\TopTab.vue                      | Vue        |         19 |          0 |          3 |         22 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\components\topic.vue                       | Vue        |        174 |         16 |         14 |        204 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\filters\index.js                           | JavaScript |         41 |          2 |          3 |         46 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\main.js                                    | JavaScript |         36 |          2 |          9 |         47 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\mixins\testPaper-mixin.js                  | JavaScript |         58 |          5 |         17 |         80 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\oldpaper\ChangeStatus.vue                  | Vue        |         22 |          1 |          9 |         32 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\oldpaper\Classes copy.vue                  | Vue        |         94 |          4 |         13 |        111 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\oldpaper\finishTest\MyTest.vue             | Vue        |         27 |          1 |          6 |         34 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\oldpaper\finishTest\MyTestList.vue         | Vue        |         58 |          0 |          6 |         64 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\router\index.js                            | JavaScript |          8 |          0 |          4 |         12 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\router\routes.js                           | JavaScript |        134 |          0 |          5 |        139 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\store\index.js                             | JavaScript |        119 |         12 |          9 |        140 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\typongs.d.ts                               | TypeScript |          4 |          0 |          0 |          4 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\utils\api.js                               | JavaScript |          6 |          0 |          0 |          6 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\utils\common.js                            | JavaScript |        100 |         29 |         27 |        156 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\utils\role.js                              | JavaScript |          9 |          0 |          2 |         11 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\Login.vue                            | Vue        |         75 |          6 |          7 |         88 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\Main.vue                             | Vue        |        142 |         21 |         17 |        180 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\MarkTest.vue                         | Vue        |         12 |          0 |          4 |         16 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\Register.vue                         | Vue        |        155 |          3 |          9 |        167 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\classes\ClassesList.vue              | Vue        |        190 |         18 |         22 |        230 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\classes\ClassesSpace.vue             | Vue        |        423 |         23 |         34 |        480 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\classes\Index.vue                    | Vue        |         29 |          0 |          3 |         32 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\classes\TestSituation.vue            | Vue        |        303 |         10 |         17 |        330 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\classes\components\CreateClasses.vue | Vue        |         87 |          3 |          3 |         93 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\classes\components\EditClasses.vue   | Vue        |         79 |          5 |          3 |         87 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\classes\components\ReleaseUpdate.vue | Vue        |         65 |          9 |          7 |         81 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\main\Home.vue                        | Vue        |         91 |          7 |         11 |        109 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\main\Me.vue                          | Vue        |         66 |          1 |          4 |         71 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\main\MyFinishTest.vue                | Vue        |        174 |          6 |         13 |        193 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\main\Topic.vue                       | Vue        |         22 |          0 |          3 |         25 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\main\myMessage\MyMessage.vue         | Vue        |         98 |          4 |         15 |        117 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\main\myMessage\SendMessage.vue       | Vue        |         12 |          0 |          4 |         16 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\myExam\MyTest.vue                    | Vue        |        184 |          9 |         22 |        215 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\myExam\components\ReleaseTest.vue    | Vue        |        271 |         30 |         28 |        329 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\testPaper\MarkTestPaper.vue          | Vue        |        313 |         38 |         45 |        396 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\testPaper\TestPaperStu.vue           | Vue        |        535 |         65 |         51 |        651 |
+| d:\项目\demo\前端\Online-exam\online-examination-system-FE-master\src\views\testPaper\TestPaperTch.vue           | Vue        |        713 |         66 |         58 |        837 |
+| Total                                                                                                        |            |     20,197 |        484 |        805 |     21,486 |
++--------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+

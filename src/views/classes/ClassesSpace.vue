@@ -119,7 +119,7 @@
               >
             </div>
             <div v-if="$role('student')">
-              <el-button
+              <!-- <el-button
                 type="primary"
                 size="small"
                 v-if="scope.row.status != '未开始'"
@@ -129,6 +129,15 @@
                 {{ scope.row.status == "进行中" ? "开始考试" : "" }}
                 {{ scope.row.status == "已结束" ? "查看试卷" : "" }}
                 {{ scope.row.status == "答题完毕" ? "查看试卷" : "" }}
+              </el-button> -->
+              <el-button
+                v-if="scope.row.status !== '未开始'"
+                type="primary"
+                size="small"
+                @click="openTestPaper(scope.row)"
+                plain
+              >
+                {{ scope.row.status === "进行中" ? "开始考试" : "查看试卷" }}
               </el-button>
             </div>
           </template>
@@ -393,6 +402,17 @@ export default {
     },
 
     //开始考试
+    openTestPaper(val) {
+      var { href } = this.$router.resolve({
+        name: "TestPaperStu",
+        params: {
+          tp_id: val.examId,
+          c_id: this.classesData.classesId,
+        },
+      });
+      window.open(href, "_blank");
+    },
+
     openTestPaper(val) {
       var { href } = this.$router.resolve({
         name: "TestPaperStu",

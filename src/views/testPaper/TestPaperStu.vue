@@ -150,10 +150,6 @@
 
                 <!-- 填空题 -->
                 <div class="fillInBlank" v-if="t.topicType == 3">
-                  <!-- <div v-for="(q, index) in t.correct_answer" :key="index">
-                    <el-input type="textarea" autosize placeholder="请回答" :disabled="isRead" v-model="t.userAnswer[index]">
-                    </el-input>
-                  </div> -->
                   <div
                     v-for="(q, index) in fillSymbolStr(t.question)"
                     :key="index"
@@ -214,10 +210,6 @@
               <div class="nav-title">
                 {{ topicTypeName_mixin(topics.topicType) }}
               </div>
-
-              <!-- <span class="topic-nav-button" @click="topicNav(topics.topicType,index)" v-for="(item , index) in topics.topic_content" :key="index" :class="emptyAnswer(item.userAnswer) ?'':'hasAnswer'">
-                {{topicNavIndex_mixin(topics.topicType,index)}}
-              </span> -->
               <span
                 class="topic-nav-button"
                 @click="topicNav(topics.topicType, index)"
@@ -341,6 +333,7 @@ export default {
         answerTime: this.expendTime,
         userTopicList: topic,
       };
+
       console.log(request);
       this.$http.post("/submitTestPaper", request).then((res) => {
         if (res.code == 200) {
@@ -350,8 +343,23 @@ export default {
       });
     },
 
-    // 强制提交数据 并退出页面
-    aaa() {
+    //到时间后 进行提交数据
+    submitTestForTime() {
+      var topic = [];
+      console.log(this.testData.topicTchDTOList);
+
+      for (let i = 0; i < this.testData.topicTchDTOList.length; i++) {
+        var item = JSON.parse(JSON.stringify(this.testData.topicTchDTOList[i]));
+
+        topic.push({
+          classesId: this.$route.params.c_id,
+          topicId: item.topicId,
+          examId: this.$route.params.tp_id,
+          userAnswer: item.userAnswer,
+        });
+      }
+      console.log(topic);
+
       var request = {
         classesId: this.$route.params.c_id,
         classesName: this.testData.examClasses.classesName,
@@ -362,16 +370,44 @@ export default {
         userTopicList: topic,
       };
 
+      console.log(request);
+
       this.$http.post("/submitTestPaper", request).then((res) => {
         if (res.code == 200) {
           this.$message.success(res.msg);
-
-          // 成功提交后跳转到另一个页面或执行其他操作
-          this.$router.push("/success-page");
+          location.reload();
         }
       });
+      console.log("提交试卷");
+      window.location.href =
+        "http://10.12.144.125:8080/#/main/classes/classesSpace/2";
+    },
 
+    // 强制提交数据 并退出页面
+    aaa() {
+      var topic = [];
+      console.log(this.testData.topicTchDTOList);
+      for (let i = 0; i < this.testData.topicTchDTOList.length; i++) {
+        this.testData.topicTchDTOList[i].userAnswer = null;
+      }
+      console.log(topic);
+
+      var request = {
+        classesId: this.$route.params.c_id,
+        classesName: this.testData.examClasses.classesName,
+        examId: this.$route.params.tp_id,
+        examName: this.testData.examName,
+        userName: this.$store.state.userName,
+        answerTime: this.expendTime,
+        userTopicList: topic,
+      };
       console.log(request);
+      this.$http.post("/submitTestPaper", request).then((res) => {
+        if (res.code == 200) {
+          this.$message.success(res.msg);
+          location.reload();
+        }
+      });
     },
 
     //获取试卷数据
@@ -497,8 +533,7 @@ export default {
         if (time < 0) {
           clearInterval(timer);
           this.$message("考试结束");
-          // this.submitTestpaper();
-          this.aaa();
+          this.submitTestForTime();
         }
       }, 1000);
     },
@@ -533,9 +568,7 @@ export default {
     //滚动事件
     handleScroll() {
       let scrollTop =
-        window.pageYOffset ||
-        document.documentElement.scrollTop ||
-        document.body.scrollTop; // 滚动条偏移量
+        document.documentElement.scrollTop || document.body.scrollTop; // 滚动条偏移量
       if (scrollTop > 154) {
         this.topic_nav_style = "top:" + (scrollTop + 62) + "px";
         this.isFixed = true;
@@ -545,19 +578,15 @@ export default {
     },
 
     visibilitychange() {
-      if (this.testData.switchPage === -1) {
-        alert("请退出考试");
-      }
-      if (document.visibilityState == "visible") {
-        console.log("页面回来了", this.switchPage);
-      }
       if (document.visibilityState == "hidden") {
         this.switchPage += 1;
 
         if (this.switchPage >= this.testData.switchPage) {
           console.log("提交试卷");
-          // this.submitTestpaper();
           this.aaa();
+          window.location.href =
+            "http://10.12.144.125:8080/#/main/classes/classesSpace";
+          // this.aaa();
         } else {
           this.$msgbox({
             title: "警告",
@@ -596,13 +625,6 @@ export default {
 
         //未完成试卷
       } else {
-        //多选题
-        // if (val.topicType == 1) {
-        //   if (val.userAnswer.join("") == "") {
-        //     return "";
-        //   }
-        // }
-
         //填空题
         if (val.topicType == 3) {
           let q = val.question.split("___");
